@@ -2,7 +2,7 @@
 
 CCHEE is a Classical Chinese Historical Event Extraction dataset constructed for fine-grained event extraction from historical texts.
 
-本仓库发布一个面向古汉语历史文本的细粒度历史事件抽取数据集。数据集标注事件类型、触发词、论元文本、论元角色及其字符级 span，可用于古汉语事件抽取、事件论元抽取、低资源信息抽取和数据增强研究。
+本仓库的内容是一个面向古汉语历史文本的细粒度历史事件抽取数据集。数据集标注事件类型、触发词、论元文本、论元角色及其字符级 span，可用于古汉语事件抽取、事件论元抽取、低资源信息抽取和数据增强研究。
 
 ## Repository Structure
 
