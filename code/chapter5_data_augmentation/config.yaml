@@ -1,0 +1,47 @@
+schema: data/schema.txt
+data: data/all_arguments.jsonl
+definitions: data/event_type_definitions.json
+guwenbert: ethanyt/guwenbert-base
+xunzi: Xunzillm4cc/Xunzi-Qwen2-7B
+out: outputs/chapter5
+seed: 42
+models: pipeline,joint,generative
+longtail_ratio: 0.7
+
+augmentation:
+  gpt4o_model: gpt-4o
+  temperature: 0.7
+  max_tokens: 512
+  candidates_per_type: 30
+  rcsm_max_supplement_len: 15
+
+trigger:
+  lr: 2.0e-5
+  batch_size: 16
+  max_len: 256
+  max_span_len: 6
+  epochs: 15
+
+argument:
+  lr: 2.0e-5
+  batch_size: 16
+  max_len: 256
+  max_span_len: 10
+  neg_ratio: 3
+  epochs: 15
+
+joint_bio:
+  lr: 2.0e-5
+  batch_size: 16
+  max_len: 256
+  epochs: 15
+
+generative:
+  lr: 2.0e-4
+  batch_size: 4
+  grad_accum: 8
+  max_len: 768
+  epochs: 10
+  lora_rank: 16
+  lora_alpha: 32
+  lora_dropout: 0.05

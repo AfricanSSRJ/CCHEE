@@ -1,4 +1,4 @@
-# CCHEE-Dataset
+# CCHEE
 
 CCHEE is a Classical Chinese Historical Event Extraction dataset constructed for fine-grained event extraction from historical texts.
 
@@ -7,7 +7,7 @@ CCHEE is a Classical Chinese Historical Event Extraction dataset constructed for
 ## Repository Structure
 
 ```text
-CCHEE-Dataset/
+CCHEE/
 ├── README.md
 ├── LICENSE
 ├── CITATION.cff
@@ -26,6 +26,11 @@ CCHEE-Dataset/
 ├── prompts/
 │   ├── gpt4o_argument_annotation_prompt.json
 │   └── ccda_augmentation_prompts.md
+├── code/
+│   ├── README.md
+│   ├── requirements.txt
+│   ├── chapter3_argument_extraction/
+│   └── chapter5_data_augmentation/
 ├── scripts/
 │   ├── check_format.py
 │   └── count_statistics.py
@@ -154,8 +159,30 @@ Prompt templates for the CCDA augmentation modules are provided in
 Model and experimental settings are summarized in
 [`docs/model_and_experiment_settings.md`](docs/model_and_experiment_settings.md).
 
+The experiment code is provided in [`code/`](code/). It includes argument
+extraction baselines for the dataset construction experiments and CCDA data
+augmentation scripts for the main experiments.
+
 For a concise reproducibility checklist, see
 [`docs/reproducibility.md`](docs/reproducibility.md).
+
+## Code
+
+Install the code dependencies with:
+
+```bash
+pip install -r code/requirements.txt
+```
+
+The code directory contains two parts:
+
+- `code/chapter3_argument_extraction/`: argument extraction baselines, including
+  span classification, BIO tagging, and generative zero-shot/few-shot settings.
+- `code/chapter5_data_augmentation/`: CCDA augmentation and comparison
+  experiments, including ESAM, RCSM, quality control, long-tail analysis, and
+  model wrappers for Pipeline-Span, Joint-BIO, and Generative settings.
+
+See [`code/README.md`](code/README.md) for detailed commands.
 
 ## Validation
 

@@ -32,6 +32,9 @@ The experiments described in the paper involve the following model settings.
 | Joint-BIO | GuwenBERT encoder with joint trigger and argument prediction in a unified BIO tagging space. |
 | Generative | Xunzi-Qwen2-7B based conditional generation model for complete event extraction. |
 
+Related implementation files are available under `code/chapter3_argument_extraction/`
+and `code/chapter5_data_augmentation/`.
+
 ## Data Split
 
 The dataset is split into training, validation, and test sets at an 8:1:1 ratio

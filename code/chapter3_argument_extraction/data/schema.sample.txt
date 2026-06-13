@@ -1,0 +1,7 @@
+[
+{"event_type_id": 1, "event_type": "人生-出生", "role_list": [{"role": "发生时间"},{"role": "发生地点"},{"role": "出生人物"},{"role": "母亲"},{"role": "父亲"}]},
+{"event_type_id": 2, "event_type": "人生-结婚", "role_list": [{"role": "发生时间"},{"role": "发生地点"},{"role": "新郎"},{"role": "新娘"}]},
+{"event_type_id": 3, "event_type": "人生-生病", "role_list": [{"role": "发生时间"},{"role": "发生地点"},{"role": "患者"},{"role": "病因"},{"role": "病情"}]},
+{"event_type_id": 4, "event_type": "交流-个人交流-见面", "role_list": [{"role": "发生时间"},{"role": "发生地点"},{"role": "见面人"}]},
+{"event_type_id": 5, "event_type": "军事-作战-攻击-征伐", "role_list": [{"role": "发生时间"},{"role": "发生地点"},{"role": "攻击方"},{"role": "受击方"}]}
+]
