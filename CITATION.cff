@@ -3,7 +3,6 @@ title: "CCHEE: A Classical Chinese Historical Event Extraction Dataset"
 message: "If you use this dataset, please cite the corresponding paper."
 type: dataset
 authors:
-  - name: "AfricanSSRJ"
+  - name: "Anonymous"
 year: 2026
-repository-code: "https://github.com/AfricanSSRJ/CCHEE-Dataset"
 license: "CC-BY-NC-4.0"

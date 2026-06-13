@@ -20,7 +20,12 @@ CCHEE-Dataset/
 ├── docs/
 │   ├── annotation_guideline.md
 │   ├── data_format.md
-│   └── examples.md
+│   ├── examples.md
+│   ├── model_and_experiment_settings.md
+│   └── reproducibility.md
+├── prompts/
+│   ├── gpt4o_argument_annotation_prompt.json
+│   └── ccda_augmentation_prompts.md
 ├── scripts/
 │   ├── check_format.py
 │   └── count_statistics.py
@@ -137,6 +142,20 @@ The dataset is stored in JSON Lines format. Each line corresponds to one sentenc
 ```
 
 More examples are available in [`docs/examples.md`](docs/examples.md).
+
+## Prompts, Models, and Reproducibility
+
+The prompt template used for GPT-4o assisted argument annotation is provided in
+[`prompts/gpt4o_argument_annotation_prompt.json`](prompts/gpt4o_argument_annotation_prompt.json).
+
+Prompt templates for the CCDA augmentation modules are provided in
+[`prompts/ccda_augmentation_prompts.md`](prompts/ccda_augmentation_prompts.md).
+
+Model and experimental settings are summarized in
+[`docs/model_and_experiment_settings.md`](docs/model_and_experiment_settings.md).
+
+For a concise reproducibility checklist, see
+[`docs/reproducibility.md`](docs/reproducibility.md).
 
 ## Validation
 

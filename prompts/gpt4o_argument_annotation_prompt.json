@@ -1,0 +1,44 @@
+[
+  {
+    "role": "system",
+    "content": "你是古汉语事件抽取助手。给定古汉语原文text以及多个待处理事件events（每个事件包含label、trigger、roles），请为每个事件抽取对应论元。请仅输出来自原文的片段文本span，不要输出offset、解释或额外内容。若某个role没有对应论元，则不要输出该role；若同一role对应多个论元，则输出多个span。输出必须严格遵循JSON格式。"
+  },
+  {
+    "role": "user",
+    "content": {
+      "text": "{TEXT}",
+      "events": [
+        {
+          "id": "{EVENT_ID}",
+          "label": "{EVENT_LABEL}",
+          "trigger": {
+            "text": "{TRIGGER_TEXT}",
+            "start": "{TRIGGER_START}",
+            "end": "{TRIGGER_END}"
+          },
+          "roles": [
+            "{ROLE_1}",
+            "{ROLE_2}",
+            "{ROLE_3}"
+          ]
+        }
+      ],
+      "output_json_schema": {
+        "events": [
+          {
+            "id": "{EVENT_ID}",
+            "arguments": [
+              {
+                "role": "{ROLE_NAME}",
+                "spans": [
+                  "{SPAN_1}",
+                  "{SPAN_2}"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+]
