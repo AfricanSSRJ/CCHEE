@@ -1,9 +1,15 @@
 # Model and Experiment Settings
 
+# 模型与实验设置
+
 This document summarizes the model and experiment settings associated with the
 dataset and the CCDA data augmentation experiments.
 
+本文档说明 CCHEE 数据集与 CCDA 数据增强实验所涉及的模型和实验设置。
+
 ## Automatic Argument Annotation
+
+## 自动论元标注
 
 The released argument annotations were obtained with a GPT-4o assisted
 annotation workflow followed by rule-based validation and manual checking.
@@ -24,6 +30,8 @@ trigger is selected as a heuristic span alignment rule.
 
 ## Baseline Models
 
+## 基线模型
+
 The experiments described in the paper involve the following model settings.
 
 | Setting | Description |
@@ -32,15 +40,21 @@ The experiments described in the paper involve the following model settings.
 | Joint-BIO | GuwenBERT encoder with joint trigger and argument prediction in a unified BIO tagging space. |
 | Generative | Xunzi-Qwen2-7B based conditional generation model for complete event extraction. |
 
-Related implementation files are available under `code/chapter3_argument_extraction/`
-and `code/chapter5_data_augmentation/`.
+Related implementation files are available under `code/argument_extraction_baselines/`
+and `code/ccda_augmentation/`.
+
+相关实现文件位于 `code/argument_extraction_baselines/` 和 `code/ccda_augmentation/`。
 
 ## Data Split
+
+## 数据划分
 
 The dataset is split into training, validation, and test sets at an 8:1:1 ratio
 in the paper experiments.
 
 ## CCDA Augmentation Settings
+
+## CCDA 增强设置
 
 CCDA contains an Event Sample Augmentation Module (ESAM), a Role Context
 Supplement Module (RCSM), and a three-level quality control mechanism.
@@ -59,6 +73,8 @@ after filtering. RCSM processed common-type samples with supplementable missing
 roles and retained 2,316 supplemented samples after filtering.
 
 ## Notes on Model Files
+
+## 模型文件说明
 
 This repository does not include pretrained model weights. The experiments use
 publicly available base models and task-specific training settings described in

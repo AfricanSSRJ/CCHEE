@@ -2,7 +2,7 @@
 
 CCHEE is a Classical Chinese Historical Event Extraction dataset constructed for fine-grained event extraction from historical texts.
 
-本仓库的内容是一个面向古汉语历史文本的细粒度历史事件抽取数据集。数据集标注事件类型、触发词、论元文本、论元角色及其字符级 span，可用于古汉语事件抽取、事件论元抽取、低资源信息抽取和数据增强研究。
+本仓库面向论文“基于细粒度数据增强的古汉语历史事件抽取方法”整理，包含古汉语历史事件抽取数据集、事件模式、提示词模板、数据校验脚本和实验代码。数据集标注事件类型、触发词、论元文本、论元角色及其字符级 span，可用于古汉语事件抽取、事件论元抽取、低资源信息抽取和数据增强研究。
 
 ## Repository Structure
 
@@ -29,8 +29,8 @@ CCHEE/
 ├── code/
 │   ├── README.md
 │   ├── requirements.txt
-│   ├── chapter3_argument_extraction/
-│   └── chapter5_data_augmentation/
+│   ├── argument_extraction_baselines/
+│   └── ccda_augmentation/
 ├── scripts/
 │   ├── check_format.py
 │   └── count_statistics.py
@@ -40,6 +40,8 @@ CCHEE/
 ```
 
 ## Dataset Overview
+
+## 数据集概览
 
 | Item | Count |
 |---|---:|
@@ -55,17 +57,23 @@ More details are available in [`statistics/dataset_statistics.md`](statistics/da
 
 ## Event Schema
 
+## 事件模式
+
 The event schema contains 67 fine-grained event types. Each event type is associated with a predefined argument-role set.
 
 事件类型和论元角色集合见 [`schema/schema.md`](schema/schema.md) 和 [`schema/event_schema.json`](schema/event_schema.json)。
 
 ## Data Format
 
+## 数据格式
+
 The dataset is stored in JSON Lines format. Each line corresponds to one sentence and contains sentence text and event annotations.
 
 数据格式说明见 [`docs/data_format.md`](docs/data_format.md)。
 
 ## Example
+
+## 样例
 
 ```json
 {
@@ -150,6 +158,8 @@ More examples are available in [`docs/examples.md`](docs/examples.md).
 
 ## Prompts, Models, and Reproducibility
 
+## 提示词、模型与复现说明
+
 The prompt template used for GPT-4o assisted argument annotation is provided in
 [`prompts/gpt4o_argument_annotation_prompt.json`](prompts/gpt4o_argument_annotation_prompt.json).
 
@@ -160,13 +170,16 @@ Model and experimental settings are summarized in
 [`docs/model_and_experiment_settings.md`](docs/model_and_experiment_settings.md).
 
 The experiment code is provided in [`code/`](code/). It includes argument
-extraction baselines for the dataset construction experiments and CCDA data
-augmentation scripts for the main experiments.
+extraction baselines and CCDA data augmentation scripts.
+
+实验代码见 [`code/`](code/)，包括论元抽取基线模型、CCDA 数据增强流程、质量控制、消融实验与长尾分析相关脚本。
 
 For a concise reproducibility checklist, see
 [`docs/reproducibility.md`](docs/reproducibility.md).
 
 ## Code
+
+## 代码
 
 Install the code dependencies with:
 
@@ -176,15 +189,22 @@ pip install -r code/requirements.txt
 
 The code directory contains two parts:
 
-- `code/chapter3_argument_extraction/`: argument extraction baselines, including
+- `code/argument_extraction_baselines/`: argument extraction baselines, including
   span classification, BIO tagging, and generative zero-shot/few-shot settings.
-- `code/chapter5_data_augmentation/`: CCDA augmentation and comparison
+- `code/ccda_augmentation/`: CCDA augmentation and comparison
   experiments, including ESAM, RCSM, quality control, long-tail analysis, and
   model wrappers for Pipeline-Span, Joint-BIO, and Generative settings.
+
+代码目录包括两部分：
+
+- `code/argument_extraction_baselines/`：论元抽取基线实验，包括 Span 分类、BIO 序列标注以及生成式 zero-shot/few-shot 设置。
+- `code/ccda_augmentation/`：CCDA 数据增强与对比实验，包括 ESAM、RCSM、质量控制、长尾分析，以及 Pipeline-Span、Joint-BIO 和 Generative 模型设置。
 
 See [`code/README.md`](code/README.md) for detailed commands.
 
 ## Validation
+
+## 数据校验
 
 Run the following command to check whether trigger and argument spans match the sentence text:
 
@@ -200,8 +220,12 @@ python scripts/count_statistics.py --input data/data.jsonl --schema schema/event
 
 ## License
 
+## 许可证
+
 This dataset is released for academic research use. See [`LICENSE`](LICENSE) for details.
 
 ## Citation
+
+## 引用
 
 If you use this dataset, please cite our paper. A citation template is provided in [`CITATION.cff`](CITATION.cff).
